@@ -3,11 +3,11 @@
 </p>
 
 <p align="center">
-  <video src="https://cdn.jsdelivr.net/gh/XiaoChu-1208/capstoryboard-releases@main/csb1.mp4" controls muted playsinline width="640"></video>
+  <img src="csb1.gif" alt="CapStoryBoard CSP 切片演示" width="640" />
 </p>
 
 <p align="center">
-  <video src="https://cdn.jsdelivr.net/gh/XiaoChu-1208/capstoryboard-releases@main/csb2.mp4" controls muted playsinline width="640"></video>
+  <img src="csb2.gif" alt="CapStoryBoard 实时同步到剪映演示" width="640" />
 </p>
 
 <h1 align="center">CapStoryBoard</h1>
