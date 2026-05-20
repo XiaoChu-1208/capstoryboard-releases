@@ -148,33 +148,40 @@ CapStoryBoard 会监听你指定的 CSP 工程目录。当你按 `Ctrl+S` 保存
 
 ## 系统要求
 
-| 项目 | 要求 |
-|---|---|
-| 操作系统 | Windows 10（1903 +）/ Windows 11，64-bit |
-| 内存 | 4 GB 及以上（推荐 8 GB+） |
-| 磁盘 | 安装包占 100 MB，运行时缓存约 200-500 MB |
-| WebView2 运行时 | Win11 内置；Win10 通过 Microsoft Edge 自动安装；缺失时安装向导会提示 |
-| 必需软件 | **Clip Studio Paint**（v1.10+）+ **剪映专业版 / CapCut Pro**（4.0+） |
-| 网络 | 仅**首次激活**需要约 2 秒，激活后无需联网 |
-
-> macOS 版正在规划中，目前**仅支持 Windows**。
+| 项目 | Windows | macOS |
+|---|---|---|
+| 操作系统 | Windows 10 (1903+) / Windows 11，64-bit | macOS 12 Monterey 及以上（Intel / Apple Silicon 通吃） |
+| 内存 | 4 GB+（推荐 8 GB） | 同左 |
+| 磁盘 | 安装包占 100-120 MB，运行缓存约 200-500 MB | 同左 |
+| 运行时 | WebView2（Win11 内置；Win10 经 Edge 自动安装） | WKWebView（系统内置，无需任何额外安装） |
+| 必需软件 | Clip Studio Paint v1.10+ · 剪映专业版 / CapCut Pro v4.0+ | 同左 |
+| 网络 | 仅首次激活约 2 秒，之后完全离线 | 同左 |
 
 ---
 
 ## 下载与安装
 
-到 [Releases 页](https://github.com/XiaoChu-1208/capstoryboard-releases/releases/latest) 下载最新 `CapStoryBoardSetup-X.Y.Z.exe`。
+到 [Releases 页](https://github.com/XiaoChu-1208/capstoryboard-releases/releases/latest) 下载对应平台的安装包。两个平台**走完全一致的 5 步 Cine Bright 安装向导**（左侧 CSP+剪映同源插图，右侧 5 步进度，第 2 步粘贴兑换码），UI/UX 一比一。
 
-### 安装步骤
+### Windows
 
-1. **双击 `CapStoryBoardSetup-0.1.0.exe`**
-2. 安装向导是 5 步流程：
-   - **欢迎页**：点击"开始部署"
-   - **输入授权码**：粘贴作者发给你的 `CSB-XXXX-XXXX-XXXX` 兑换码
-   - **选择安装目录**：默认 `%LocalAppData%\Programs\CapStoryBoard`，**无需管理员权限**
-   - **释放部署**：实时显示拷贝进度 + 安装日志，约 5-10 秒
-   - **完成**：可选"立即启动 CapStoryBoard"
-3. 安装完成后桌面会有快捷方式；开始菜单的程序列表里也能找到
+1. 下载 `CapStoryBoardSetup-X.Y.Z.exe`，双击运行
+2. 5 步向导：
+   - **欢迎页** → 点"开始部署"
+   - **输入授权码** → 粘贴 `CSB-XXXX-XXXX-XXXX` 兑换码
+   - **选择安装目录** → 默认 `%LocalAppData%\Programs\CapStoryBoard`，无需管理员权限
+   - **释放部署** → 实时进度条 + 安装日志（约 5-10 秒）
+   - **完成** → 勾选"立即启动 CapStoryBoard"
+3. 桌面 + 开始菜单自动创建快捷方式
+
+### macOS
+
+1. 下载 `CapStoryBoardSetup-vX.Y.Z.dmg`，双击挂载
+2. 把 `CapStoryBoardSetup.app` 拖到 `/Applications`，弹出磁盘镜像
+3. 在 `/Applications` 找到 `CapStoryBoardSetup` 双击运行（首次启动若被 Gatekeeper 拦截，去「系统设置 → 隐私与安全」点「仍要打开」）
+4. 走与 Windows 完全一致的 5 步向导，默认安装目录 `/Applications`，无需 sudo
+5. 安装完成后 `/Applications/CapStoryBoard.app` 即可双击运行（安装器已自动清 `com.apple.quarantine` 属性，绝大多数情况无需再操作 Gatekeeper）
+6. 卸载：双击 `~/.capstoryboard/uninstall.command` 一键清理
 
 ### 卸载
 
