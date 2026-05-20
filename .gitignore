@@ -1,0 +1,2 @@
+# GitHub 单文件 100 MB 硬限制，安装包只放 Release 附件不入库
+*.exe
