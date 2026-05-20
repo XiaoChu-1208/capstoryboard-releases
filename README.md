@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="banner.png" alt="CapStoryBoard CSP 分镜稿一键同步剪映" width="640" />
+  <img src="banner.svg" alt="CapStoryBoard CSP 分镜稿一键同步剪映" width="640" />
 </p>
 
 <h1 align="center">CapStoryBoard</h1>
