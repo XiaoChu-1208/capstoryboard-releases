@@ -2,6 +2,14 @@
   <img src="banner.svg" alt="CapStoryBoard CSP 分镜稿一键同步剪映" width="640" />
 </p>
 
+<p align="center">
+  <video src="https://github.com/XiaoChu-1208/capstoryboard-releases/raw/main/csb1.mp4" controls muted playsinline width="640"></video>
+</p>
+
+<p align="center">
+  <video src="https://github.com/XiaoChu-1208/capstoryboard-releases/raw/main/csb2.mp4" controls muted playsinline width="640"></video>
+</p>
+
 <h1 align="center">CapStoryBoard</h1>
 
 <p align="center">
