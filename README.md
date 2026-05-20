@@ -3,11 +3,11 @@
 </p>
 
 <p align="center">
-  <video src="https://github.com/XiaoChu-1208/capstoryboard-releases/raw/main/csb1.mp4" controls muted playsinline width="640"></video>
+  <video src="https://cdn.jsdelivr.net/gh/XiaoChu-1208/capstoryboard-releases@main/csb1.mp4" controls muted playsinline width="640"></video>
 </p>
 
 <p align="center">
-  <video src="https://github.com/XiaoChu-1208/capstoryboard-releases/raw/main/csb2.mp4" controls muted playsinline width="640"></video>
+  <video src="https://cdn.jsdelivr.net/gh/XiaoChu-1208/capstoryboard-releases@main/csb2.mp4" controls muted playsinline width="640"></video>
 </p>
 
 <h1 align="center">CapStoryBoard</h1>
