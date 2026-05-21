@@ -175,11 +175,15 @@ CapStoryBoard 后台监控你的 PSD 文件。每次按 `Ctrl+S` 保存：
 ### macOS
 
 1. 下载 `CapStoryBoardSetup-vX.Y.Z.dmg`，双击挂载
-2. 把 `CapStoryBoardSetup.app` 拖到 `/Applications`，弹出磁盘镜像
-3. 在 `/Applications` 找到 `CapStoryBoardSetup` 双击运行（首次启动若被 Gatekeeper 拦截，去「系统设置 → 隐私与安全」点「仍要打开」）
-4. 走与 Windows 完全一致的 5 步向导，默认安装目录 `/Applications`，无需 sudo
-5. 安装完成后 `/Applications/CapStoryBoard.app` 即可双击运行（安装器已自动清 `com.apple.quarantine` 属性，绝大多数情况无需再操作 Gatekeeper）
+2. **直接双击磁盘里的 `CapStoryBoardSetup` 图标运行**（它是安装程序，**不用**拖到「应用程序」文件夹；首次启动若被 Gatekeeper 拦截，去「系统设置 → 隐私与安全」点「仍要打开」再双击一次）
+3. 走与 Windows 完全一致的 5 步向导：第 2 步粘贴兑换码，第 3 步默认安装到 `/Applications`，无需 sudo
+4. 向导完成后会把 **CapStoryBoard 本体**装进 `/Applications`，可勾选"立即启动"；之后从启动台 / 应用程序文件夹打开即可（安装器已自动清 `com.apple.quarantine` 属性，正常无需再点 Gatekeeper）
+5. 装完可以退出并删除安装器、推出磁盘镜像
 6. 卸载：双击 `~/.capstoryboard/uninstall.command` 一键清理
+
+> **macOS 首次打开被拦截？**（"无法打开，来自身份不明的开发者" / "已损坏，应移到废纸篓"）
+> 这是 Gatekeeper 对未签名 app 的正常拦截，**文件没问题**。最快解法：**右键点 `CapStoryBoardSetup` → 打开 → 再点「打开」**。
+> 详见下方 [常见问题 → macOS Gatekeeper](#常见问题)。
 
 ### 卸载
 
@@ -292,6 +296,26 @@ App 启动时会自动检查新版本：
 CapStoryBoard 默认装到 `%LocalAppData%\Programs\CapStoryBoard`，**不需要管理员权限**。
 如果你手动改到 `Program Files`，需要在弹出的 UAC 提示中点"是"授权。
 **不推荐改默认路径**，除非你有运维理由。
+
+#### Q:（macOS）双击安装器报"无法打开，因为它来自身份不明的开发者"
+
+这是 macOS Gatekeeper 对**未经 Apple 付费签名**的应用的默认拦截，**不是病毒、也不是文件损坏**。CapStoryBoard 是独立开发者作品，未购买 Apple 开发者签名（99 美元/年），所以会被拦一下。放行方法二选一：
+
+- **方法一（推荐，最快）**：在访达里**右键**（或按住 Control 单击）`CapStoryBoardSetup` 图标 → 选「打开」→ 弹窗里再点一次「打开」。之后这个 app 就被永久放行。
+- **方法二**：先双击一次（会被拦），然后去 **系统设置 → 隐私与安全性**，往下拉到「安全性」，会看到一行"已阻止 CapStoryBoardSetup..."，点右边的 **「仍要打开」**，再回去双击。
+
+#### Q:（macOS）报"已损坏，无法打开，您应该将它移到废纸篓"
+
+这是 **Apple Silicon (M 系列)** 上对从网络下载的未签名 app 的常见误报 —— `com.apple.quarantine` 隔离属性 + 无签名触发的。**文件没坏**。两种解法：
+
+- **图形方式**：同上「右键 → 打开」通常也能绕过
+- **终端一行解决**（最稳）：打开「终端」，粘贴执行（路径按实际拖入）：
+  ```bash
+  xattr -cr /Volumes/CapStoryBoard\ Setup/CapStoryBoardSetup.app
+  ```
+  然后再双击运行即可。
+
+> 说明：安装器内部在释放 CapStoryBoard 本体时**已自动执行 `xattr -dr com.apple.quarantine`**，所以装好后的主程序通常不会再有这个问题；上面的操作只针对**安装器本身**第一次启动。
 
 ### 激活阶段
 
