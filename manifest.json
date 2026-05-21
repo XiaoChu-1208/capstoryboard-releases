@@ -1,7 +1,9 @@
 {
   "latest": "0.1.0",
-  "released_at": "2026-05-20",
-  "download_url": "https://github.com/XiaoChu-1208/capstoryboard-releases/releases/latest",
-  "notes": "首个正式发布：现代化 Cine Bright 安装器 + Ed25519 设备绑定授权 + C2 黄金比例图标全套",
-  "min_supported": "0.1.0"
+  "min_version": "0.1.0",
+  "url": "https://github.com/XiaoChu-1208/capstoryboard-releases/releases/download/v0.1.0/CapStoryBoardSetup-0.1.0.exe",
+  "released_at": "2026-05-21",
+  "url_mac": "https://github.com/XiaoChu-1208/capstoryboard-releases/releases/download/v0.1.0/CapStoryBoardSetup-v0.1.0.dmg",
+  "notes": "首个正式发布：CSP→剪映实时分镜预演。Win + macOS 双平台，安装时联网激活，激活后完全离线。",
+  "sig": "8kxxgRrvTrei0Rf62Ol01Ip4T4aM+mNl+XQQu4yP16lBds0/1v5j9TNv8+yJCK8G2XuKK/JOkjgMSOniwd0NCQ=="
 }
