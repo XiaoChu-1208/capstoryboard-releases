@@ -176,8 +176,10 @@ CapStoryBoard 后台监控你的 PSD 文件。每次按 `Ctrl+S` 保存：
 
 1. 下载 `CapStoryBoardSetup-vX.Y.Z.dmg`，双击挂载
 2. **直接双击磁盘里的 `CapStoryBoardSetup` 图标运行**（它是安装程序，**不用**拖到「应用程序」文件夹；首次启动若被 Gatekeeper 拦截，去「系统设置 → 隐私与安全」点「仍要打开」再双击一次）
-3. 走与 Windows 完全一致的 5 步向导：第 2 步粘贴兑换码，第 3 步默认安装到 `/Applications`，无需 sudo
-4. 向导完成后会把 **CapStoryBoard 本体**装进 `/Applications`，可勾选"立即启动"；之后从启动台 / 应用程序文件夹打开即可（安装器已自动清 `com.apple.quarantine` 属性，正常无需再点 Gatekeeper）
+3. 走与 Windows 完全一致的 5 步向导：第 2 步粘贴兑换码，第 3 步默认安装到用户级 `~/Applications`（不用密码、不会被 macOS 拦）
+4. 向导完成后会把 **CapStoryBoard 本体**装进 `~/Applications`，可勾选"立即启动"；之后从启动台 / 聚焦搜索 / 「前往 → 个人 → 应用程序」打开即可（安装器已自动清 quarantine 并重新 ad-hoc 签名，正常无需再点 Gatekeeper）
+
+> 为什么不是 `/Applications`？macOS 13+ 的「App 管理」保护会拦截未签名安装器写入系统级 `/Applications`（报 *Operation not permitted*）。装到用户级 `~/Applications` 完全等效、零摩擦。想装系统级可在第 3 步手动改路径，届时按系统提示授予「App 管理」权限即可。
 5. 装完可以退出并删除安装器、推出磁盘镜像
 6. 卸载：双击 `~/.capstoryboard/uninstall.command` 一键清理
 
